@@ -16,3 +16,47 @@ The project was to develop a crop growth simulator that takes into consideration
 ### NOTE
 * The farm simulator is currently unfinished and probably no more work will be done at this project for now.
 * The farm simulator currently makes up variables such as nutrients found in the soil, or solar radiation or weather information and applies factors to determine growth and development of the crop just to make the simulator run, however, formulas etc used from the agricultural side are fictional.
+
+### EXAMPLE CODE
+
+## STEP 1
+### CREATING USER NAMED "carlos"
+carlos = {
+				'name'			    : 'Carlos',
+				'location'		  : 'Venezuela',
+				'email'			    : 'email1@hotmail.com',
+				'birthday'		  : '27-02-1986',
+				'mobile'		    : '+491765555555',
+				'emailRecovery'	: 'email2@gmail.com',
+			}
+      
+print('CREATING USER CARLOS:')
+carlos = User(**carlos)
+
+
+## STEP 2
+### CREATING FARM NAMED "AQUAPONIC"
+carlos.farm_new('AQUAPONIC', 'Indonesia')
+print(carlos.farms['AQUAPONIC'].info())
+
+
+## STEP 3
+### USE THE FARMER TO PREPARE A CROP 
+carlos.farms['AQUAPONIC'].farmer.prepare_crop(10,	'Plum', 5) # (growth area, 'crop', batches for multi harvest)
+
+
+## STEP 4
+### USE THE FARMER TO START FARM SIMULATION
+sim_data = {
+				'qtyDays' 		  : 180, # this refers to the qty of days that would a tomato to grow from seed until harvest
+				'mineralTag'   	: 'Mg',
+				'mineralValue' 	: 3,
+				'water' 		    : 250,
+				'hours' 		    : 10,
+			}
+carlos.farms['AQUAPONIC'].farmer.sim_time('Plum', **sim_data)
+
+
+## STEP 5
+### USE THE FARMER TO GET YOU A REPORT OF THE FARM SIMULATION
+carlos.farms['AQUAPONIC'].farmer.report('Plum')
