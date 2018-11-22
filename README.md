@@ -17,8 +17,8 @@ The project was to develop a crop growth simulator that takes into consideration
 * The farm simulator is currently unfinished and probably no more work will be done at this project for now.
 * The farm simulator currently makes up variables such as nutrients found in the soil, or solar radiation or weather information and applies factors to determine growth and development of the crop just to make the simulator run, however, formulas etc used from the agricultural side are fictional.
 
-### EXAMPLE CODE
 
+### EXAMPLE CODE
 ## STEP 1
 ### CREATING USER NAMED "carlos"
 ```python
@@ -45,7 +45,7 @@ print(carlos.farms['AQUAPONIC'].info())
 ## STEP 3
 ### USE THE FARMER TO PREPARE A CROP
 ```python
-carlos.farms['AQUAPONIC'].farmer.prepare_crop(10,	'Plum', 5) # (growth area, 'crop', batches for multi harvest)
+carlos.farms['AQUAPONIC'].farmer.prepare_crop(10, 'Plum', 5) # (growth area, 'crop', batches for multi harvest)
 ```
 
 
