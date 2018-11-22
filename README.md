@@ -30,7 +30,7 @@ carlos = {
 				'emailRecovery'	: 'email2@gmail.com',
 			}
       
-print('CREATING USER CARLOS:')
+
 carlos = User(**carlos)
 
 
@@ -41,12 +41,17 @@ print(carlos.farms['AQUAPONIC'].info())
 
 
 ## STEP 3
-### USE THE FARMER TO PREPARE A CROP 
+### USE THE FARMER TO PREPARE A CROP
+ 
+```python
 carlos.farms['AQUAPONIC'].farmer.prepare_crop(10,	'Plum', 5) # (growth area, 'crop', batches for multi harvest)
+```
+
 
 
 ## STEP 4
 ### USE THE FARMER TO START FARM SIMULATION
+```python
 sim_data = {
 				'qtyDays' 		  : 180, # this refers to the qty of days that would a tomato to grow from seed until harvest
 				'mineralTag'   	: 'Mg',
@@ -55,7 +60,7 @@ sim_data = {
 				'hours' 		    : 10,
 			}
 carlos.farms['AQUAPONIC'].farmer.sim_time('Plum', **sim_data)
-
+```
 
 ## STEP 5
 ### USE THE FARMER TO GET YOU A REPORT OF THE FARM SIMULATION
